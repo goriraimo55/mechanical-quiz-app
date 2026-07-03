@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 47% 6%;
+  --foreground: 210 40% 96%;
+  --card: 222 44% 9%;
+  --card-foreground: 210 40% 96%;
+  --muted: 220 28% 15%;
+  --muted-foreground: 214 18% 68%;
+  --border: 214 26% 20%;
+  --input: 214 26% 20%;
+  --primary: 187 85% 53%;
+  --primary-foreground: 222 47% 7%;
+  --secondary: 262 72% 63%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 42 95% 58%;
+  --accent-foreground: 222 47% 8%;
+  --destructive: 0 72% 55%;
+  --destructive-foreground: 210 40% 98%;
+  --success: 150 74% 46%;
+  --warning: 35 92% 55%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(rgba(34, 211, 238, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 20% 10%, rgba(20, 184, 166, 0.18), transparent 28rem),
+    radial-gradient(circle at 80% 0%, rgba(168, 85, 247, 0.16), transparent 26rem),
+    #060b16;
+  background-size: 48px 48px, 48px 48px, auto, auto, auto;
+  color: hsl(var(--foreground));
+  font-family:
+    "Yu Gothic UI",
+    "Hiragino Sans",
+    "Meiryo",
+    system-ui,
+    sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.guild-panel {
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.94), rgba(17, 24, 39, 0.9));
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.28);
+}
+
+.quest-scan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.13), transparent);
+  transform: translateX(-100%);
+  animation: scan 5s linear infinite;
+  pointer-events: none;
+}
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: #111827 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  .print-card {
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+    background: white !important;
+    color: #111827 !important;
+  }
+}
