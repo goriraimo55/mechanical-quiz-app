@@ -20,6 +20,20 @@ pnpm dev
 & 'C:\Users\gorir\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\pnpm.cmd' dev
 ```
 
+
+## 公開用ファイル構成
+
+GitHub Pagesなど、リポジトリ直下を公開する静的ホスティングで `README.md` が表示されないように、公開入口として `index.html` を配置しています。
+`index.html` は静的エクスポート済みアプリの `docs/` に自動遷移します。
+
+静的公開ファイルを更新する場合は、次のコマンドを実行してください。
+
+```bash
+npm run build:pages
+```
+
+このコマンドは Next.js アプリを静的エクスポートし、生成結果を `docs/` にコピーします。
+
 ## 技術構成
 
 - Next.js
