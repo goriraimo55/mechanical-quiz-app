@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:pages": "NEXT_PUBLIC_STATIC_BASE_PATH=docs npm run build && rm -rf docs && cp -R out docs && touch docs/.nojekyll"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
